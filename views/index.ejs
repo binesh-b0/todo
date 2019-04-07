@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To do</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+   <h1>TODO</h1>
+   <div>
+     <form action="newTask" method="POST">
+       <input type="number" name="id" id="id" placeholder="task id">
+       <input type="text" name="title" id="" placeholder="title">
+       status :<input type="checkbox" name="done" value="false" unchecked>
+       <input type="submit" name="submit" value="add">
+     </form>
+   </div>
+   <div>
+     <h1>List</h1>
+      <table>
+        <tr><th>id</th><th>title</th><th>status</th></tr>
+
+      </table>
+   </div>
+  </body>
+</html>

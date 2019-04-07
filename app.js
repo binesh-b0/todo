@@ -7,9 +7,95 @@ var Web3 = require("web3");
 
 web3 = new Web3("http://localhost:8545");
 
-coinbase = "0x3d2cf517b33f2217d7822442ec8eaef1398684c6";
-var contractAddress = "0x3562972a4e1de76179b7b7b0f75816926b92693e";
-var contractAbi ;
+coinbase = "0xb0192478f39a1055688c7560a72a6e2c880c489f";
+var contractAddress = "0xbfac86fb6f5e27edf499e4a6333426011a829c4a";
+var contractAbi=[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "uint256"
+			},
+			{
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"name": "_status",
+				"type": "bool"
+			}
+		],
+		"name": "newTask",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "uint256"
+			},
+			{
+				"name": "_status",
+				"type": "bool"
+			}
+		],
+		"name": "setStatus",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "status",
+				"type": "bool"
+			}
+		],
+		"name": "newTaskAdded",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "getTask",
+		"outputs": [
+			{
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"name": "_status",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/getTask');
